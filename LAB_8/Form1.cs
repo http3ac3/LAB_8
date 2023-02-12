@@ -29,8 +29,12 @@ namespace LAB_8
 
             List<char> newAlphabet = new List<char>();
             
-            for (int i = 0; i < keyWord.Length; i++) 
-                newAlphabet.Add(keyWord[i]);
+            for (int i = 0; i < keyWord.Length; i++)
+            {
+                if (!newAlphabet.Contains(keyWord[i]))
+                    newAlphabet.Add(keyWord[i]);
+            }
+                
 
             AnswerTB.Text = "Исходный алфавит:";
             for (int i = 0; i < 33; i++) 
@@ -73,7 +77,10 @@ namespace LAB_8
             List<char> newAlphabet = new List<char>();
 
             for (int i = 0; i < keyWord.Length; i++)
-                newAlphabet.Add(keyWord[i]);
+            {
+                if (!newAlphabet.Contains(keyWord[i]))
+                    newAlphabet.Add(keyWord[i]);
+            }
 
             AnswerTB.Text = "Исходный алфавит:";
             for (int i = 0; i < 33; i++)
@@ -101,7 +108,6 @@ namespace LAB_8
                     continue;
                 }
                 int index = Array.IndexOf(newAlphabet.ToArray(), openText[i]);
-                MessageBox.Show(index.ToString());
                 decipheredText += alphabet[index];
             }
 
